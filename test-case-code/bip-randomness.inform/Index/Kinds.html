@@ -1,0 +1,1931 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Kinds Index</title>
+    <style type="text/css">
+        <!--
+        :root {
+            color-scheme: light dark;
+            --element-banner-background-colour: #eeeeee;
+            --heading-panel-background-colour: #eeeeee;
+            --heading-panel-text-colour: #222222;
+            --heading-panel-succeeded-background-colour: #E6FFE6;
+            --heading-panel-failed-background-colour: #f69Ca6;
+
+            --heading-row-background-colour: #e0e0e0;
+            --stripe-one-background-colour: #ffffff;
+            --stripe-two-background-colour: #f3f6fa;
+
+            --index-dull-red-colour: #800000;
+            --periodic-table-sidebar-colour: #888;
+            --periodic-table-sidebar-hover-colour: #222;
+            --leaders-background-colour: white;
+            --library-card-title-colour: #803030;
+            --library-card-other-colour: #303030;
+            --index-more-box-background-colour: #e0e0e0;
+            --index-activity-contents-background-colour: #e8e0c0;
+            --registry-contents-link-colour: #202020;
+
+        }
+
+        @media (prefers-color-scheme: dark) {
+          :root {
+            --element-banner-background-colour: #444444;
+            --heading-panel-background-colour: #444444;
+            --heading-panel-text-colour: #ffffff;
+            --heading-panel-succeeded-background-colour: #738073;
+            --heading-panel-failed-background-colour: #7b4e53;
+
+            --heading-row-background-colour: #707070;
+            --stripe-one-background-colour: #7f7f7f;
+            --stripe-two-background-colour: #797b7d;
+
+            --index-dull-red-colour: #c00000;
+            --periodic-table-sidebar-colour: #555;
+            --periodic-table-sidebar-hover-colour: #222;
+            --leaders-background-colour: black;
+            --library-card-title-colour: #a05050;
+            --library-card-other-colour: #505050;
+            --index-more-box-background-colour: #444444;
+            --index-activity-contents-background-colour: #727060;
+            --registry-contents-link-colour: #ffffff;
+            }
+        }
+
+        /* The default font (family) and size */
+
+        body, p, td {
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 12px;
+        }
+
+        /* For fixed-point material within text, such as the typing on the Library Card index page */
+
+        span.typewritten {
+            font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+            font-size: 13px;
+        }
+
+        /* For less important material: the small print */
+
+        span.smaller {
+            font-size: 80%;
+        }
+
+        /* The "heading panel" is the coloured box, high up on the page. The colours
+        vary depending on the page: for example, the style on a report of a translation
+        with no problems is "headingpanelsucceeded", usually green, but if there were
+        problems then "headingpanelfailed" is used, which is usually red. "headingpanel"
+        itself is a more neutral grey by default. "headingpanelDark" is an alternative
+        look to make the extensions index pages have some visual contrast with the others;
+        by default they are a darker grey. */
+
+        .headingpanel {
+            background: var(--heading-panel-background-colour);
+        }
+        .headingpanelsucceeded {
+            background: var(--heading-panel-succeeded-background-colour);
+        }
+        .headingpanelfailed {
+            background: var(--heading-panel-failed-background-colour);
+        }
+        .headingpanelalt {
+            background: #808080;
+        }
+
+        /* Heading panels have two lines of text: an upper one in a larger size, and a
+        lower one in a smaller. Again, the alt versions are meant to contrast.
+
+            Report on Translation: Succeeded                <-- headingpaneltext
+            Produced by Inform 10.1.0 (build 6U97)          <-- headingpanelrubric
+
+            Installed Extensions                            <-- headingpaneltextalt
+            Bundles of extra rules or phrases to...         <-- headingpanelrubricalt
+
+        */
+
+        span.headingpaneltext {
+            color: var(--heading-panel-text-colour);
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        span.headingpaneltextalt {
+            color: #ffffff;
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        span.headingpanelrubric {
+            color: var(--heading-panel-text-colour);
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        span.headingpanelrubricalt {
+            color: #ffffff;
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        /* Horizontal rule styling */
+
+        div.hr {
+            border: 0;
+            width: 100%;
+            color: #707070;
+            background-color: #707070;
+            height: 5px;
+        }
+
+        /* This styles the (usually white) text of the example numbers written inside
+        oval blobs in the extension documentation, which mimic the look of the in-app
+        documentation. */
+
+        .oval, .oval td {
+            background-image:url('inform:/doc_images/ovoid.png');
+            color:white;
+        }
+
+        /* Styling used in the extension documentation indexes: */
+
+        /* Used for extension names in the extensions pane of the app */
+
+        span.extensioncensusentry {
+            color: #ffffff;
+        }
+
+        span.extensionindexentry {
+            color: #404040;
+        }
+
+        span.extensionindexerror {
+            color: #ff8080;
+        }
+
+        /* This is used in extension documentation, where an example is presented
+        in a slightly tinted box: */
+
+        table.extensionexample {
+        	background-color: #f0f0f0;
+        }
+
+        span.extensionexampleletter {
+        	color: #202020;
+        	font-size: 14px;
+        	font-weight: bold;
+        }
+
+        /* Seen in problem messages: */
+
+        span.problemred {
+            color: #800000;
+        }
+
+        span.problemgreen {
+            color: #008000;
+        }
+
+        span.phraseword {
+            color: #808080;
+        }
+
+        span.phrasetokentext {
+            color: #e00060;
+        }
+
+        span.phrasetokendesctext {
+            color: #4040ff;
+        }
+
+        span.phrasetokenvaluetext {
+            color: #ff4040;
+        }
+
+        /* Now we move on to styling used in the Index pages only: */
+
+        /* The periodic table display has "sidebars", usually grey and taller than they
+        are wide; they contain no text. */
+
+        div.periodictablesidebarcolour {
+            background: var(--periodic-table-sidebar-colour);
+        }
+        div.periodictablesidebar:hover {
+            background: var(--periodic-table-sidebar-hover-colour);
+        }
+
+        /* The text of the element-abbreviation, such as "Lx" or "Ph", uses: */
+
+        span.elementtext {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Similarly for the "atomic number" - a single digit - in the top left corner
+        of these boxes: */
+
+        span.elementnumbertext {
+            color: #ffffff;
+            font-size: 7pt;
+        }
+
+        /* For the text of the element title, to the right of the element box: */
+
+        span.elementtitletext {
+            color: #ffffff;
+            font-size: 9px;
+            font-weight: bold;
+        }
+
+        /* The banner at the top of each element: */
+
+        table.elementbanner {
+            background: var(--element-banner-background-colour);
+        }
+
+        /* For the typewriting on the Library Card: */
+
+        span.librarycardtitle {
+            color: var(--library-card-title-colour);
+        }
+
+        span.librarycardother {
+            color: var(--library-card-other-colour);
+        }
+
+        /* Generically used for "more details" boxes in the index: */
+
+        table.indexmorebox {
+        	background-color: var(--index-more-box-background-colour);
+            border-radius: 8px;
+        }
+
+        /* But not for activity contents: */
+
+        table.indexactivitycontents {
+        	background-color: var(--index-activity-contents-background-colour);
+            border-radius: 8px;
+        }
+
+        /* For responses in index entries about rules: */
+
+        span.indexresponseletter {
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #8080ff;
+        }
+
+        span.indexresponsetext {
+            color: #000066;
+        }
+
+        /* Used ubiquitously throughout the index for unemphasised text: */
+
+        span.indexblack {
+        	color: #000000;
+        }
+
+        span.indexgrey {
+        	color: #808080;
+        }
+
+        span.indexdarkgrey {
+            color: #505050;
+        }
+
+        span.indexdullred {
+            color: var(--index-dull-red-colour);
+        }
+
+        span.indexdullgreen {
+            color: #008000;
+        }
+
+        span.indexdullblue {
+            color: #000080;
+        }
+
+        /* Used in the numbering of levels of the World map in the Index */
+
+        span.indexmaplevelnumbers {
+        	color: #c0c0c0;
+        }
+
+        /* Used for the room squares in the World map in the Index (which is currently
+        a table with one row of one column) */
+
+        table.indexmaproom {
+        	border-color: #000000;
+        }
+
+        /* Used in the numbering of levels of the World map in the Index */
+
+        span.indexmaplevelnumbers {
+        	color: #c0c0c0;
+        }
+
+        /* Used e.g. for title rows in the Chart of basic kinds in the Index */
+
+        tr.headingrow {
+        	background-color: var(--heading-row-background-colour);
+        }
+
+        /* Standard rows have black text on striped background colours, these being
+        the usual ones seen in Mac OS X applications such as iTunes. */
+
+        tr.stripeone {
+        	background-color: var(--stripe-one-background-colour);
+        }
+
+        tr.stripetwo {
+        	background-color: var(--stripe-two-background-colour);
+        }
+
+        tr.tintedrow {
+        	background-color: #808080;
+        }
+
+        /* In the Figures index, this is the background colour used behind images
+        (though in fact it will only be visible if the image fails to load, or uses
+        transparency): */
+
+        div.figureindexbox {
+        	background-color: #6495ed;
+        }
+
+        /* To get the book-contents-page style leaders on the Contents element of
+           the index to work, these must use the background colour of the body of
+           the page, whatever that is: */
+
+        ul.leaders li.leaded span:first-child {
+            background: var(--leaders-background-colour);
+        }
+        ul.leaders li.leaded span + span {
+            background: var(--leaders-background-colour);
+        }
+
+        /* On Registry index pages (such as the Public Library), these are used for
+        download buttons and the like: */
+
+        span.registrybuttontext {
+        	font-size: 11px;
+        	border-color: #000000;
+        }
+
+        span.registryminibuttontext {
+        	font-size: 10px;
+        	border-color: #000000;
+        }
+
+        span.registrybuttonuninstalled {
+        	color: #000000;
+        	background: #ffffdd;
+        }
+
+        span.registrybuttoninstalled {
+        	color: #000000;
+        	background: #ffffff;
+        	pointer-events: none;
+        }
+
+        span.registrybuttonbuiltin {
+        	color: #888888;
+        	background: #ffffff;
+        	pointer-events: none;
+        }
+
+        span.registrybuttonupdate {
+        	color: #000000;
+        	background: #aaddff;
+        }
+
+        span.registrybuttonrevert {
+        	color: #000000;
+        	background: #ddaaff;
+        }
+
+        span.registrybuttonrevealer {
+        	color: #ffffff;
+        	background: #444444;
+        }
+
+        /* Registry index section headings: */
+
+        span.registrysectionname {
+        	font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+        	-webkit-font-smoothing: antialiased;
+        	font-size: 16px;
+        	line-height: 18px;
+        }
+        span.registrysubsectionname {
+        	font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+        	-webkit-font-smoothing: antialiased;
+        	font-size: 14px;
+        	line-height: 16px;
+        }
+
+        /* These are for the "mark" for a section, usually a section-symbol and number */
+
+        span.registrysectionmark {
+        	font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+        	-webkit-font-smoothing: antialiased;
+        	font-size: 16px;
+        	line-height: 18px;
+        	color: #666;
+        }
+        span.registrysubsectionmark {
+        	font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+        	-webkit-font-smoothing: antialiased;
+        	font-size: 14px;
+        	line-height: 16px;
+        	color: #666;
+        }
+
+        /* Text of an item listed in a registry: */
+
+        span.registryitemtext {
+        	font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+        	-webkit-font-smoothing: antialiased;
+        	font-size: 12px;
+        	line-height: 16px;
+        }
+
+        /* And how the links in a registry index page behave: */
+
+        a.registrysilentlink {
+        	text-decoration: none;
+        	color: #000;
+        }
+        a.registrybuttonlink {
+        	text-decoration: none;
+        }
+        a.registrycontentslink:link {
+        	text-decoration: none;
+        	color: var(--registry-contents-link-colour);
+        }
+        a.registrycontentslink:visited {
+        	text-decoration: none;
+        	color: var(--registry-contents-link-colour);
+        }
+        a.registrycontentslink:hover {
+        	text-decoration: none;
+        	color: #D00000;
+        }
+        a.registrycontentslink:active {
+        	text-decoration: none;
+        	color: #D00000;
+        }
+
+        -->
+    </style>
+    <style type="text/css">
+        <!--
+        /* (1) General layout material */
+
+        *, *:before, *:after {
+        	-moz-box-sizing: border-box;
+        	-webkit-box-sizing: border-box;
+        	box-sizing: border-box;
+        }
+        .headingpanellayout {
+        	position: relative;
+        	height: 56px;
+        	padding: 0px;
+        	white-space:nowrap;
+        }
+        .headingpanellayoutdeeper {
+        	position: relative;
+        	height: 117px;
+        	padding: 0px;
+        	white-space:nowrap;
+        }
+        .headingtext {
+        	position: absolute;
+        	top: -4px;
+        	left: -1px;
+        	width: 100%;
+        	padding: 14px 10px 0px 10px;
+        }
+        .headingrubric {
+        	position: absolute;
+        	top: 36px;
+        	width: 100%;
+        	padding: 0px 10px 0px 10px;
+        }
+        h3.tighter {
+        	margin-top: 0px;
+        }
+        p.hang {
+        	padding-left: 25px;
+        	text-indent: -25px;
+        	margin-top: 0px;
+        	margin-bottom: 0px;
+        }
+        p.in1 {
+        	padding-left: 0px;
+        }
+        p.tightin1 {
+        	padding-left: 0px;
+        	margin-top: 2px;
+        	margin-bottom: 2px;
+        }
+        p.halftightin1 {
+        	padding-left: 0px;
+        	margin-bottom: 2px;
+        }
+        p.hangingin1 {
+        	padding-left: 50px;
+        	text-indent: -50px;
+        	margin-top: 0px;
+        	margin-bottom: 1px;
+        }
+        p.in2 {
+        	padding-left: 25px;
+        }
+        p.tightin2 {
+        	padding-left: 25px;
+        	margin-top: 2px;
+        	margin-bottom: 2px;
+        }
+        p.halftightin2 {
+        	padding-left: 25px;
+        	margin-bottom: 2px;
+        }
+        p.hangingin2 {
+        	padding-left: 75px;
+        	text-indent: -50px;
+        	margin-top: 0px;
+        	margin-bottom: 1px;
+        }
+        p.in3 {
+        	padding-left: 50px;
+        }
+        p.tightin3 {
+        	padding-left: 50px;
+        	margin-top: 2px;
+        	margin-bottom: 2px;
+        }
+        p.halftightin3 {
+        	padding-left: 50px;
+        	margin-bottom: 2px;
+        }
+        p.hangingin3 {
+        	padding-left: 100px;
+        	text-indent: -50px;
+        	margin-top: 0px;
+        	margin-bottom: 1px;
+        }
+        p.in4 {
+        	padding-left: 75px;
+        }
+        p.tightin4 {
+        	padding-left: 75px;
+        	margin-top: 2px;
+        	margin-bottom: 2px;
+        }
+        p.halftightin4 {
+        	padding-left: 75px;
+        	margin-bottom: 2px;
+        }
+        p.hangingin4 {
+        	padding-left: 125px;
+        	text-indent: -50px;
+        	margin-top: 0px;
+        	margin-bottom: 1px;
+        }
+        p.in5 {
+        	padding-left: 100px;
+        }
+        p.tightin5 {
+        	padding-left: 100px;
+        	margin-top: 2px;
+        	margin-bottom: 2px;
+        }
+        p.halftightin5 {
+        	padding-left: 100px;
+        	margin-bottom: 2px;
+        }
+        p.hangingin5 {
+        	padding-left: 150px;
+        	text-indent: -50px;
+        	margin-top: 0px;
+        	margin-bottom: 1px;
+        }
+        p.in6 {
+        	padding-left: 125px;
+        }
+        p.tightin6 {
+        	padding-left: 125px;
+        	margin-top: 2px;
+        	margin-bottom: 2px;
+        }
+        p.halftightin6 {
+        	padding-left: 125px;
+        	margin-bottom: 2px;
+        }
+        p.hangingin6 {
+        	padding-left: 175px;
+        	text-indent: -50px;
+        	margin-top: 0px;
+        	margin-bottom: 1px;
+        }
+        p.in7 {
+        	padding-left: 150px;
+        }
+        p.tightin7 {
+        	padding-left: 150px;
+        	margin-top: 2px;
+        	margin-bottom: 2px;
+        }
+        p.halftightin7 {
+        	padding-left: 150px;
+        	margin-bottom: 2px;
+        }
+        p.hangingin7 {
+        	padding-left: 200px;
+        	text-indent: -50px;
+        	margin-top: 0px;
+        	margin-bottom: 1px;
+        }
+        p.in8 {
+        	padding-left: 175px;
+        }
+        p.tightin8 {
+        	padding-left: 175px;
+        	margin-top: 2px;
+        	margin-bottom: 2px;
+        }
+        p.halftightin8 {
+        	padding-left: 175px;
+        	margin-bottom: 2px;
+        }
+        p.hangingin8 {
+        	padding-left: 225px;
+        	text-indent: -50px;
+        	margin-top: 0px;
+        	margin-bottom: 1px;
+        }
+        p.in9 {
+        	padding-left: 200px;
+        }
+        p.tightin9 {
+        	padding-left: 200px;
+        	margin-top: 2px;
+        	margin-bottom: 2px;
+        }
+        p.halftightin9 {
+        	padding-left: 200px;
+        	margin-bottom: 2px;
+        }
+        p.hangingin9 {
+        	padding-left: 250px;
+        	text-indent: -50px;
+        	margin-top: 0px;
+        	margin-bottom: 1px;
+        }
+
+        /* (2) Index page layout material */
+
+        /* The periodic table display has "sidebars", usually grey and taller than they
+        are wide; they contain no text. */
+
+        div.periodictablesidebar {
+        	height: 56px;
+        	width: 16px;
+        }
+        .periodictablesidebar a:link { text-decoration: none; }
+        .periodictablesidebar a:visited { text-decoration: none; }
+        .periodictablesidebar a:active { text-decoration: none; }
+
+        /* The "element boxes" are the cells appearing in the periodic-table display
+        on the welcome page of the index: */
+
+        .elementbox {
+        	position: relative;
+        	height: 56px;
+        	width: 56px;
+        	padding: 0px;
+        }
+
+        .elementbox a:link { text-decoration: none; }
+        .elementbox a:visited { text-decoration: none; }
+        .elementbox a:active { text-decoration: none; }
+        .elementbox a:hover { text-decoration: none; }
+        .elementbox:hover {
+        	opacity: 0.6;
+        }
+
+        /* The "small element boxes" look like those, but are smaller, and used on
+        the headings of the content which those original boxes link to: */
+
+        .smallelementbox {
+        	position: relative;
+        	height: 40px;
+        	width: 40px;
+        	padding: 0px;
+        }
+
+        .smallelementbox a:link { text-decoration: none; }
+        .smallelementbox a:visited { text-decoration: none; }
+        .smallelementbox a:active { text-decoration: none; }
+        .smallelementbox a:hover { text-decoration: none; }
+        .smallelementbox:hover {
+        	opacity: 0.6;
+        }
+
+        /* This is a class for the links formed by the element boxes: */
+
+        a.elementlink {
+        	position: absolute;
+        	top: -4px;
+        	left: -1px;
+        	width: 100%;
+        	padding: 14px 0px 14px 1px;
+        	text-align: center;
+        }
+
+        /* Similarly for the "atomic number" - a single digit - in the top left corner
+        of these boxes: */
+
+        div.elementnumber {
+        	position: absolute;
+        	top: 1px;
+        	left: 3px;
+        	text-align: left;
+        }
+
+        /* For the text of the element title, to the right of the element box: */
+
+        div.elementtitle {
+        	position: absolute;
+        	top: 35px;
+        	width: 100%;
+        	text-align: center;
+        }
+
+        /* Used for the book-contents-page style leaders on the Contents element of
+           the index: */
+
+        ul.leaders {
+        	padding: 0;
+        	margin-top: 1px;
+        	margin-bottom: 0;
+        	overflow-x: hidden;
+        	list-style: none}
+        ul.leaders li.leaded:before {
+        	float: left;
+        	width: 0;
+        	white-space: nowrap;
+        	content:
+        	".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "
+        	".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "
+        	".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "
+        	".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "
+        	".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "
+        	".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "
+        	".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "
+        	".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "
+        	".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "
+        	".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "}
+        ul.leaders li.leaded span:first-child {
+        	padding-right: 0.33em;
+        }
+        ul.leaders li.leaded span + span {
+        	float: right;
+        	padding-left: 0.33em;
+        }
+        li.indent1 span:first-child {
+        	padding-left: 25px;
+        }
+        li.indent2 span:first-child {
+        	padding-left: 50px;
+        }
+        li.indent3 span:first-child {
+        	padding-left: 75px;
+        }
+        li.indent4 span:first-child {
+        	padding-left: 100px;
+        }
+        li.indent5 span:first-child {
+        	padding-left: 125px;
+        }
+        li.indent6 span:first-child {
+        	padding-left: 150px;
+        }
+        li.indent7 span:first-child {
+        	padding-left: 175px;
+        }
+        li.indent8 span:first-child {
+        	padding-left: 200px;
+        }
+        li.indent9 span:first-child {
+        	padding-left: 225px;
+        }
+
+        li.unleaded:before {
+        	content: "";
+        }
+
+        /* On Registry index pages (such as the Public Library), these are used for
+        download buttons and the like: */
+
+        span.registrybuttons {
+        	height: 20px;
+        	padding: 2px 8px 2px 8px;
+        	margin: 2px;
+        	border:1px solid;
+        	border-radius: 5px;
+        }
+
+        span.registryminibuttons {
+        	height: 14px;
+        	padding: 2px 5px 2px 5px;
+        	margin: 2px;
+        	border:1px solid;
+        	border-radius: 4px;
+        }
+
+        /* Used to hide or display sections in the Registry pages: */
+
+        div.registrysectionitemsopen {
+        	display: block;
+        }
+
+        div.registrysectionitemsclosed {
+        	display: none;
+        }
+
+        /* Hanging indentation for Registry item paragraphs: */
+
+        p.registryitem {
+        	padding-left: 80px;
+        	text-indent: -40px;
+        }
+
+        p.registryaddition {
+        	padding-left: 40px;
+        	text-indent: -40px;
+        }
+
+        -->
+    </style>
+    <script type="text/javascript">
+        function project() {
+            return window.Project;
+        }
+        function showExtra(id, imid) {
+        	if (document.getElementById(id).style.display == 'block') {
+        		document.getElementById(id).style.display = 'none';
+        		document.getElementById(imid).src = 'inform:/doc_images/extra.png';
+        	} else {
+        		document.getElementById(id).style.display = 'block';
+        		document.getElementById(imid).src = 'inform:/doc_images/extraclose.png';
+        	}
+        }
+        function showBasic(id) {
+        	if (document.getElementById(id).style.display == '') {
+        		document.getElementById(id).style.display = 'none';
+        	} else {
+        		document.getElementById(id).style.display = '';
+        	}
+        }
+        function showResp(id, imid) {
+        	if (document.getElementById(id)) {
+        		if (document.getElementById(id).style.display == 'block') {
+        			document.getElementById(id).style.display = 'none';
+        			document.getElementById(imid).src = 'inform:/doc_images/responses.png';
+        		} else {
+        			document.getElementById(id).style.display = 'block';
+        			document.getElementById(imid).src = 'inform:/doc_images/responsesclose.png';
+        		}
+        	}
+        }
+        function showAllResp(tot) {
+        	for (var i=0;i<tot;i++) {
+        		showResp('extra'+(1000000+i), 'plus'+(1000000+i));
+        	}
+        }
+        function pasteCode(code) {
+        	var myProject = project();
+        	myProject.selectView('source');
+        	myProject.pasteCode(code);
+        }
+
+    </script>
+    <style type="text/css" media="screen, print">
+        #box1_1 {
+            background: #cf0a38;
+        }
+        #minibox1_1 {
+            background: #cf0a38;
+        }
+        #box1_2 {
+            background: #cf0a38;
+        }
+        #minibox1_2 {
+            background: #cf0a38;
+        }
+        #box1_3 {
+            background: #cf0a38;
+        }
+        #minibox1_3 {
+            background: #cf0a38;
+        }
+        #box1_4 {
+            background: #cf0a38;
+        }
+        #minibox1_4 {
+            background: #cf0a38;
+        }
+        #box2_1 {
+            background: #e9cf08;
+        }
+        #minibox2_1 {
+            background: #e9cf08;
+        }
+        #box2_2 {
+            background: #e9cf08;
+        }
+        #minibox2_2 {
+            background: #e9cf08;
+        }
+        #box2_3 {
+            background: #e9cf08;
+        }
+        #minibox2_3 {
+            background: #e9cf08;
+        }
+        #box3_1 {
+            background: #52992f;
+        }
+        #minibox3_1 {
+            background: #52992f;
+        }
+        #box3_2 {
+            background: #52992f;
+        }
+        #minibox3_2 {
+            background: #52992f;
+        }
+        #box3_3 {
+            background: #52992f;
+        }
+        #minibox3_3 {
+            background: #52992f;
+        }
+        #box3_4 {
+            background: #52992f;
+        }
+        #minibox3_4 {
+            background: #52992f;
+        }
+        #box4_1 {
+            background: #1d31b4;
+        }
+        #minibox4_1 {
+            background: #1d31b4;
+        }
+        #box4_2 {
+            background: #1d31b4;
+        }
+        #minibox4_2 {
+            background: #1d31b4;
+        }
+    </style>
+    <script type="text/javascript">
+        var qq; window.onload = function() {
+            if (location.search.length > 0) {
+                qq = location.search.substring(1, location.search.length);
+                show_only_one_element(qq);
+            }
+        }
+        function click_element_box(id) {
+            if (document.getElementById(id).style.display == 'none') {
+                show_only_one_element(id);
+            } else {
+                var x = 0;
+                if (document.getElementById('segment1').style.display == '') { x++; }
+                if (document.getElementById('segment2').style.display == '') { x++; }
+                if (document.getElementById('segment3').style.display == '') { x++; }
+                if (x == 1) { show_all_elements(); }
+                else { show_only_one_element(id); }
+            }
+        }
+        function click_sidebar() {
+            if (document.getElementById('surround0').style.display == 'none') {
+                enter_periodic_table();
+            } else {
+                show_all_elements();
+            }
+        }
+        function show_all_elements() {
+            show_element('segment1');
+            light_up('segment1');
+            show_element('segment2');
+            light_up('segment2');
+            show_element('segment3');
+            light_up('segment3');
+        	}
+        function show_only_one_element(id) {
+            hide_element('segment1');
+            light_down('segment1');
+            hide_element('segment2');
+            light_down('segment2');
+            hide_element('segment3');
+            light_down('segment3');
+            show_element(id);
+            light_up(id);
+        }
+        function enter_periodic_table() {
+            hide_element('segment1');
+            light_up('segment1');
+            hide_element('segment2');
+            light_up('segment2');
+            hide_element('segment3');
+            light_up('segment3');
+        }
+        function show_element(id) {
+            document.getElementById(id).style.display = '';
+        }
+        function hide_element(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+        function light_up(id) {
+            var ic = 'box2_1';
+            if (id == 'segment2') { ic = 'box2_2';}
+            if (id == 'segment3') { ic = 'box2_3';}
+            document.getElementById(ic).style.background = '#e9cf08';
+        }
+        function light_down(id) {
+            var ic = 'box2_1';
+            if (id == 'segment2') { ic = 'box2_2';}
+            if (id == 'segment3') { ic = 'box2_3';}
+            document.getElementById(ic).style.background = '#cccccc';
+        }
+    </script>
+</head>
+<body>
+    <!--CONTENT BEGINS-->
+    <div id="periodictable">
+        <table cellspacing="3" border="0" width="100%">
+        </table>
+        <table cellspacing="3" border="0" width="100%">
+            <tr id="surround2">
+                <td onclick="window.location='Welcome.html'; return false;">
+                    <div class="periodictablesidebar periodictablesidebarcolour">
+                    </div>
+
+                </td>
+                <td onclick="click_element_box('segment1'); return false;">
+                    <div id="box2_1" class="elementbox">
+                        <a class="elementlink" title="Chart" href="#"><span class="elementtext">Ch</span></a>
+                        <div class="elementnumber">
+                            <span class="elementnumbertext">1</span></div>
+                        <div class="elementtitle">
+                            <span class="elementtitletext">Chart</span></div>
+                    </div>
+
+                </td>
+                <td onclick="click_element_box('segment2'); return false;">
+                    <div id="box2_2" class="elementbox">
+                        <a class="elementlink" title="Arithmetic" href="#"><span class="elementtext">Ar</span></a>
+                        <div class="elementnumber">
+                            <span class="elementnumbertext">2</span></div>
+                        <div class="elementtitle">
+                            <span class="elementtitletext">Arithmetic</span></div>
+                    </div>
+
+                </td>
+                <td onclick="click_element_box('segment3'); return false;">
+                    <div id="box2_3" class="elementbox">
+                        <a class="elementlink" title="Values" href="#"><span class="elementtext">Vl</span></a>
+                        <div class="elementnumber">
+                            <span class="elementnumbertext">3</span></div>
+                        <div class="elementtitle">
+                            <span class="elementtitletext">Values</span></div>
+                    </div>
+
+                </td>
+                <td onclick="show_all_elements(); return false;" colspan="2" style="width:100%">
+
+                    <div class="headingpanellayout headingpanel">
+                        <div class="headingtext">
+                            <span class="headingpaneltext">Kinds Index</span></div>
+                        <div class="headingrubric">
+                            <span class="headingpanelrubric">All the different sorts of value</span></div>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="segment1">
+        <hr>
+        <table cellspacing="3" border="0" class="elementbanner">
+            <tr>
+                <td valign="top" align="left">
+                    <div id="minibox2_1" class="smallelementbox">
+                        <a class="elementlink" title="Chart" href="#" onclick="click_element_box('segment1'); return false;"><span class="elementtext">Ch</span></a><div class="elementnumber">
+                            <span class="elementnumbertext">1
+                            </span></div>
+                    </div>
+
+                </td>
+                <td style="width:100%;" align="left" valign="top">
+                    <p style="margin-top:0px;padding-top:0px;margin-bottom:0px;padding-bottom:0px;line-height:150%;"><b>Chart</b> &mdash; 
+                    A chart of all the kinds<br>
+                    <i>About kinds&nbsp;&nbsp;<a href=inform:/doc28.html><img border=0 src=inform:/doc_images/help.png></a>; New kinds of object&nbsp;&nbsp;<a href=inform:/doc50.html><img border=0 src=inform:/doc_images/help.png></a>; Other new kinds&nbsp;&nbsp;<a href=inform:/doc54.html><img border=0 src=inform:/doc_images/help.png></a></i></p>
+
+                </td>
+            </tr>
+        </table>
+
+        <table border="0" cellspacing="0" cellpadding="0" width=100%>
+            <tr class="tintedrow">
+                <td height="1" colspan="5" cellpadding="0">
+
+                </td>
+            </tr>
+            <tr class="headingrow">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    <b>basic kinds</b>&nbsp;
+                </td>
+                <td style="white-space:nowrap;" align="left" valign="top">
+                    <i>default value</i>&nbsp;<a href="#" onClick="showBasic('default');"><img border=0 src=inform:/doc_images/shelp.png></a>&nbsp;
+                </td>
+                <td style="white-space:nowrap;" align="left" valign="top">
+                    <i>repeat</i>&nbsp;<a href="#" onClick="showBasic('repeat');"><img border=0 src=inform:/doc_images/shelp.png></a>&nbsp;
+                </td>
+                <td style="white-space:nowrap;" align="left" valign="top">
+                    <i>props</i>&nbsp;<a href="#" onClick="showBasic('props');"><img border=0 src=inform:/doc_images/shelp.png></a>&nbsp;
+                </td>
+                <td style="white-space:nowrap;" align="left" valign="top">
+                    <i>under</i>&nbsp;<a href="#" onClick="showBasic('under');"><img border=0 src=inform:/doc_images/shelp.png></a>
+                </td>
+            </tr>
+            <tr class="tintedrow">
+                <td height="1" colspan="5" cellpadding="0">
+
+                </td>
+            </tr>
+            <tr style="display:none" id="default">
+                <td colspan="5">
+                    The <b>default value</b> is used when we make something like 
+                    	a variable but don't tell Inform what its value is. For instance, if 
+                    	we write 'Zero hour is a time that varies', but don't tell Inform 
+                    	anything specific like 'Zero hour is 11:21 PM.', then Inform uses 
+                    	the value in the table above to decide what it will be. 
+                    	The same applies if we create a property (for instance, 'A person 
+                    	has a number called lucky number.'). Kinds of value not included 
+                    	in the table cannot be used in variables and properties.<hr>
+
+                </td>
+            </tr>
+            <tr style="display:none" id="repeat">
+                <td colspan="5">
+                    A tick for <b>repeat</b> means that it's possible to 
+                    	repeat through values of this kind. For instance, 'repeat with T 
+                    	running through times:' is allowed, but 'repeat with N running 
+                    	through numbers:' is not - there are too many numbers for this to 
+                    	make sense. A tick here also means it's possible to form lists such 
+                    	as 'list of rulebooks', or to count the 'number of scenes'.<hr>
+
+                </td>
+            </tr>
+            <tr style="display:none" id="props">
+                <td colspan="5">
+                    A tick for <b>props</b> means that values of this 
+                    	kind can have properties. For instance, 'A scene can be thrilling or 
+                    	dull.' makes an either/or property of a scene, but 'A number can be 
+                    	nice or nasty.' is not allowed because it would cost too much storage 
+                    	space. (Of course 'Definition:' can always be used to make adjectives 
+                    	applying to numbers; it's only properties which have storage 
+                    	worries.)<hr>
+
+                </td>
+            </tr>
+            <tr style="display:none" id="under">
+                <td colspan="5">
+                    A tick for <b>under</b> means that it's possible 
+                    	to understand values of this kind. For instance, 'Understand "award 
+                    	[number]" as awarding.' might be allowed, if awarding were an action 
+                    	applying to a number, but 'Understand "run [rule]" as rule-running.' 
+                    	is not allowed - there are so many rules with such long names that 
+                    	Inform doesn't add them to its vocabulary during play.<hr>
+
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    object&nbsp;<a href=#A164><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    nothing&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>
+                </td>
+            </tr>
+            <tr class="tintedrow">
+                <td height="1" colspan="5" cellpadding="0">
+
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    number&nbsp;<a href="Kinds.html?segment2"><img border=0 src=inform:/doc_images/calc1.png></a>&nbsp;<a href=inform:/doc225.html><img border=0 src=inform:/doc_images/help.png></a>&nbsp;<a href=#A167><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    0&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    real number&nbsp;<a href="Kinds.html?segment2"><img border=0 src=inform:/doc_images/calc1.png></a>&nbsp;<a href=inform:/doc225.html><img border=0 src=inform:/doc_images/help.png></a>&nbsp;<a href=#A168><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    0&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    truth state&nbsp;<a href=inform:/doc161.html><img border=0 src=inform:/doc_images/help.png></a>&nbsp;<a href=#A169><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    false&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    text&nbsp;<a href=#A170><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    ""&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    snippet&nbsp;<a href=inform:/doc317.html><img border=0 src=inform:/doc_images/help.png></a>&nbsp;<a href=#A171><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    <i>word 1 of command</i>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    unicode character&nbsp;<a href=#A172><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    unicode 32 (<i>a space</i>)&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    fruit&nbsp;<a href="source:story.ni#line5"><img border=0 src=inform:/doc_images/Reveal.png></a> [5]&nbsp;<a href=#A188><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    apple&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    use option&nbsp;<a href=#A173><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    the ineffectual option&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    response&nbsp;<a href=#A174><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    ?&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    verb&nbsp;<a href=inform:/doc220.html><img border=0 src=inform:/doc_images/help.png></a>&nbsp;<a href=#A175><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    verb be&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    table name&nbsp;<a href=inform:/doc258.html><img border=0 src=inform:/doc_images/help.png></a>&nbsp;<a href=#A176><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    <i>a table with no rows or columns</i>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    <span class="indexgrey">equation name&nbsp;<a href=#A177><img border=0 src=inform:/doc_images/Below.png></a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    <span class="indexgrey"><i>an equation doing nothing</i></span>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/greycross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/greycross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/greycross.png>
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    rulebook outcome&nbsp;<a href=#A178><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    allow access&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="cross" src=inform:/doc_images/cross.png>
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    <span class="indexgrey">external file&nbsp;<a href=inform:/doc382.html><img border=0 src=inform:/doc_images/help.png></a>&nbsp;<a href=#A179><img border=0 src=inform:/doc_images/Below.png></a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    <span class="indexgrey"><i>a non-file</i></span>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/greytick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/greytick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/greytick.png>
+                </td>
+            </tr>
+            <tr class="tintedrow">
+                <td height="1" colspan="5" cellpadding="0">
+
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    natural language [6]&nbsp;<a href=#A181><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    English language&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    grammatical tense&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a> [5]&nbsp;<a href=#A183><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    present tense&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    narrative viewpoint&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a> [6]&nbsp;<a href=#A184><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    first person singular&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    grammatical case&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a> [2]&nbsp;<a href=#A185><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    nominative&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    grammatical gender&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a> [3]&nbsp;<a href=#A186><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    neuter gender&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>&nbsp;
+                </td>
+                <td align="center" valign="top">
+                    <img border=0 alt="tick" src=inform:/doc_images/tick.png>
+                </td>
+            </tr>
+            <tr class="tintedrow">
+                <td height="1" colspan="5" cellpadding="0">
+
+                </td>
+            </tr>
+            <tr class="headingrow">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    <b>making new kinds from old</b>&nbsp;
+                </td>
+                <td style="white-space:nowrap;" align="left" valign="top">
+                    <i>default value</i>&nbsp;<a href="#" onClick="showBasic('default');"><img border=0 src=inform:/doc_images/shelp.png></a>&nbsp;
+                </td>
+                <td style="white-space:nowrap;" align="left" valign="top">
+                    <i></i>&nbsp;&nbsp;
+                </td>
+                <td style="white-space:nowrap;" align="left" valign="top">
+                    <i></i>&nbsp;&nbsp;
+                </td>
+                <td style="white-space:nowrap;" align="left" valign="top">
+                    <i></i>&nbsp;
+                </td>
+            </tr>
+            <tr class="tintedrow">
+                <td height="1" colspan="5" cellpadding="0">
+
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    phrase K -> L&nbsp;<a href=#A284><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top" colspan="4">
+                    <i>always the default value of L</i>
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    <span class="indexgrey"></span>relation<span class="indexgrey"> of K</span>&nbsp;<a href=#A289><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top" colspan="4">
+                    <i>a relation never holding</i>
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    <span class="indexgrey">K based</span> rule<span class="indexgrey"> producing L</span>&nbsp;<a href=inform:/doc325.html><img border=0 src=inform:/doc_images/help.png></a>&nbsp;<a href=#A292><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top" colspan="4">
+                    the little-used do nothing rule
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    <span class="indexgrey">K based</span> rulebook<span class="indexgrey"> producing L</span>&nbsp;<a href=inform:/doc325.html><img border=0 src=inform:/doc_images/help.png></a>&nbsp;<a href=#A295><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top" colspan="4">
+                    the action-processing rules
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    <span class="indexgrey"></span>activity<span class="indexgrey"> on K</span>&nbsp;<a href=inform:/doc285.html><img border=0 src=inform:/doc_images/help.png></a>&nbsp;<a href=#A298><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top" colspan="4">
+                    printing the name
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    list of K&nbsp;<a href=inform:/doc350.html><img border=0 src=inform:/doc_images/help.png></a>&nbsp;<a href=#A300><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top" colspan="4">
+                    { }
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    description of K&nbsp;<a href=inform:/doc362.html><img border=0 src=inform:/doc_images/help.png></a>&nbsp;<a href=#A305><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top" colspan="4">
+                    <i>matching nothing</i>
+                </td>
+            </tr>
+            <tr class="stripetwo">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    <span class="indexgrey">K valued</span> property<span class="indexgrey"></span>&nbsp;<a href=#A307><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top" colspan="4">
+                    --
+                </td>
+            </tr>
+            <tr class="stripeone">
+                <td style="white-space:nowrap;" align="left" valign="top" height="20">
+                    <span class="indexgrey">K valued</span> table<span class="indexgrey"></span> column<span class="indexgrey"></span>&nbsp;<a href=#A309><img border=0 src=inform:/doc_images/Below.png></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top" colspan="4">
+                    --
+                </td>
+            </tr>
+            <tr class="tintedrow">
+                <td height="1" colspan="5" cellpadding="0">
+
+                </td>
+            </tr>
+        </table>
+        <p class="halftightin1"><a name=A6></a><b>object</b> (<i>plural</i> objects)</p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        Objects are values intended to simulate physical things: places, people, things, and so on. They come in many kinds. The special value 'nothing' is also allowed, and can be used to mean 'no object at all'.<br>
+        <i>Usually</i> singular-named <i>not</i> plural-named, improper-named <i>not</i> proper-named.<br>
+        <i>Usually not</i> ambiguously plural.<br>
+        <i>Can have</i> printed name (<i>text</i>), printed plural name (<i>text</i>), indefinite article (<i>text</i>).<br>
+        </p>
+        <hr>
+        <p class="halftightin1"><a name=A7></a><b>number</b> (<i>plural</i> numbers)&nbsp;<a href=inform:/doc225.html><img border=0 src=inform:/doc_images/help.png></a></p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value, understandable value, arithmetic value<br>
+        Whole number in the range -32768, -32767, ..., -2, -1, 0, 1, 2, 3, ..., 32767: small numbers can be written textually as 'one', 'two', 'three', ..., 'ten', 'eleven', 'twelve'. (A much larger number range is allowed if we compile the source to Glulx rather than the Z-machine: see the Settings panel.)<br>
+        </p>
+        <p class="halftightin1"><a name=A8></a><b>real number</b> (<i>plural</i> real numbers)&nbsp;<a href=inform:/doc225.html><img border=0 src=inform:/doc_images/help.png></a></p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value, understandable value, arithmetic value, real arithmetic value<br>
+        A real, or 'floating-point' number: the difference between this and ordinary "number" is that real numbers can hold values like 3.141, which aren't whole numbers, and can also hold very large or very small quantities in an approximate way. (Use of real numbers is only allowed if we compile the source to Glulx rather than the Z-machine: see the Settings panel.)<br>
+        </p>
+        <p class="halftightin1"><a name=A9></a><b>truth state</b> (<i>plural</i> truth states)&nbsp;<a href=inform:/doc161.html><img border=0 src=inform:/doc_images/help.png></a></p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value, understandable value<br>
+        The state of whether something is 'true' or 'false'. (In other computing languages, this might be called 'boolean', after the 19th-century logician George Boole, who first realised this was a kind of value.)<br>
+        </p>
+        <p class="halftightin1"><a name=A10></a><b>text</b> (<i>plural</i> texts)</p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        Some text in double quotation marks, perhaps with substitutions written in square brackets.<br>
+        </p>
+        <p class="halftightin1"><a name=A11></a><b>snippet</b> (<i>plural</i> snippets)&nbsp;<a href=inform:/doc317.html><img border=0 src=inform:/doc_images/help.png></a></p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        A fragment of the player's most recent typed command, taking in a run of consecutive words.<br>
+        </p>
+        <p class="halftightin1"><a name=A12></a><b>unicode character</b> (<i>plural</i> unicode characters)</p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        A single character - a letter or item of punctuation.<br>
+        </p>
+        <p class="halftightin1"><a name=A5></a><b>fruit&nbsp;<a href="source:story.ni#line5"><img border=0 src=inform:/doc_images/Reveal.png></a></b> (<i>plural</i> fruits)</p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value, understandable value, enumerated value<br>
+        <p class="tightin1"><span class="indexgrey">apple</span>&nbsp;<a href="source:story.ni#line5"><img border=0 src=inform:/doc_images/Reveal.png></a>, <span class="indexgrey">pear</span>&nbsp;<a href="source:story.ni#line5"><img border=0 src=inform:/doc_images/Reveal.png></a>, <span class="indexgrey">persimmon</span>&nbsp;<a href="source:story.ni#line5"><img border=0 src=inform:/doc_images/Reveal.png></a>, <span class="indexgrey">yuzu</span>&nbsp;<a href="source:story.ni#line5"><img border=0 src=inform:/doc_images/Reveal.png></a>, <span class="indexgrey">orange</span>&nbsp;<a href="source:story.ni#line5"><img border=0 src=inform:/doc_images/Reveal.png></a></p>
+        </p>
+        <p class="halftightin1"><a name=A13></a><b>use option</b> (<i>plural</i> use options)</p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        One of the optional ways to configure Inform, such as the 'authorial modesty option'.<br>
+        </p>
+        <p class="halftightin1"><a name=A14></a><b>response</b> (<i>plural</i> responses)</p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        One of the standard responses issued by the Standard Rules or other extensions.<br>
+        </p>
+        <p class="halftightin1"><a name=A15></a><b>verb</b> (<i>plural</i> verbs)&nbsp;<a href=inform:/doc220.html><img border=0 src=inform:/doc_images/help.png></a></p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        One of the verbs which Inform knows how to conjugate.<br>
+        </p>
+        <p class="halftightin1"><a name=A16></a><b>table name</b> (<i>plural</i> table names)&nbsp;<a href=inform:/doc258.html><img border=0 src=inform:/doc_images/help.png></a></p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        Like tables of information in a book or newspaper, tables in Inform hold values which have been organised into rows and columns. A table name is just a single value, identifying which table is meant - say, 'Table of US Presidents' might be a table name value.<br>
+        </p>
+        <p class="halftightin1"><a name=A17></a><b>equation name</b> (<i>plural</i> equation names)</p>
+        <p class="tightin1"><i>Matches:</i> value<br>
+        Like formulae in a textbook or a scientific paper, equations in Inform are written out in displayed form and given names.<br>
+        </p>
+        <p class="halftightin1"><a name=A18></a><b>rulebook outcome</b> (<i>plural</i> rulebook outcomes)</p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        </p>
+        <p class="halftightin1"><a name=A19></a><b>external file</b> (<i>plural</i> external files)&nbsp;<a href=inform:/doc382.html><img border=0 src=inform:/doc_images/help.png></a></p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value, understandable value, enumerated value<br>
+        When made with the Glulx setting, an Inform project can make limited use of files stored on the computer which is operating the story at run-time. An external-file is just the name of one of these files (not the filename in the usual sense, but a name given to it in the Inform source text).<br>
+        </p>
+        <hr>
+        <p class="halftightin1"><a name=A0></a><b>natural language</b> (<i>plural</i> natural languages)</p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value, understandable value, enumerated value<br>
+        <p class="tightin1"><span class="indexgrey">English language</span>, <span class="indexgrey">French language</span>, <span class="indexgrey">German language</span>, <span class="indexgrey">Italian language</span>, <span class="indexgrey">Spanish language</span>, <span class="indexgrey">Swedish language</span></p>
+        </p>
+        <p class="halftightin1"><a name=A1></a><b>grammatical tense&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a></b> (<i>plural</i> grammatical tenses)</p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value, understandable value, enumerated value<br>
+        <p class="tightin1"><span class="indexgrey">present tense</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a>, <span class="indexgrey">past tense</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a>, <span class="indexgrey">perfect tense</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a>, <span class="indexgrey">past perfect tense</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a>, <span class="indexgrey">future tense</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a></p>
+        </p>
+        <p class="halftightin1"><a name=A2></a><b>narrative viewpoint&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a></b> (<i>plural</i> narrative viewpoints)</p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value, understandable value, enumerated value<br>
+        <p class="tightin1"><span class="indexgrey">first person singular</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a>, <span class="indexgrey">second person singular</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a>, <span class="indexgrey">third person singular</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a>, <span class="indexgrey">first person plural</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a>, <span class="indexgrey">second person plural</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a>, <span class="indexgrey">third person plural</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a></p>
+        </p>
+        <p class="halftightin1"><a name=A3></a><b>grammatical case&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a></b> (<i>plural</i> grammatical cases)</p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value, understandable value, enumerated value<br>
+        <p class="tightin1"><span class="indexgrey">nominative</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a>, <span class="indexgrey">accusative</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a></p>
+        </p>
+        <p class="halftightin1"><a name=A4></a><b>grammatical gender&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a></b> (<i>plural</i> grammatical genders)</p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value, understandable value, enumerated value<br>
+        <p class="tightin1"><span class="indexgrey">neuter gender</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a>, <span class="indexgrey">masculine gender</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a>, <span class="indexgrey">feminine gender</span>&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a></p>
+        </p>
+        <hr>
+        <p class="halftightin1"><a name=A28></a><b>phrase K -> L</b> (<i>plural</i> phrases K -> L)</p>
+        <p class="tightin1"><i>contravariant in K, covariant in L&nbsp;<a href=#contra>><img border=0 src=inform:/doc_images/shelp.png></a></i></p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        </p>
+        <p class="halftightin1"><a name=A30></a><b><span class="indexgrey"></span>relation<span class="indexgrey"> of K</span></b> (<i>plural</i> <span class="indexgrey"></span>relations<span class="indexgrey"> of K</span>)</p>
+        <p class="tightin1"><i>covariant&nbsp;<a href=#contra>><img border=0 src=inform:/doc_images/shelp.png></a></i></p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        </p>
+        <p class="halftightin1"><a name=A31></a><b><span class="indexgrey">K based</span> rule<span class="indexgrey"> producing L</span></b> (<i>plural</i> <span class="indexgrey">K based</span> rules<span class="indexgrey"> producing L</span>)&nbsp;<a href=inform:/doc325.html><img border=0 src=inform:/doc_images/help.png></a></p>
+        <p class="tightin1"><i>contravariant in K, covariant in L&nbsp;<a href=#contra>><img border=0 src=inform:/doc_images/shelp.png></a></i></p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        One of many, many rules which determine what happens during play. Rules can be triggered by scenes beginning or ending, by certain actions, at certain times, or in the course of carrying out certain activities.<br>
+        </p>
+        <p class="halftightin1"><a name=A32></a><b><span class="indexgrey">K based</span> rulebook<span class="indexgrey"> producing L</span></b> (<i>plural</i> <span class="indexgrey">K based</span> rulebooks<span class="indexgrey"> producing L</span>)&nbsp;<a href=inform:/doc325.html><img border=0 src=inform:/doc_images/help.png></a></p>
+        <p class="tightin1"><i>contravariant in K, covariant in L&nbsp;<a href=#contra>><img border=0 src=inform:/doc_images/shelp.png></a></i></p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        A list of rules to follow, in sequence, to get something done. A rulebook is like a ring-binder, with the individual rules as sheets of paper. Inform normally sorts these into their 'natural' order, with the most specific rules first, but it's easy to shuffle the pages if you need to. When some task is carried out during play, Inform is normally working through a rulebook, turning the pages one by one.<br>
+        </p>
+        <p class="halftightin1"><a name=A33></a><b><span class="indexgrey"></span>activity<span class="indexgrey"> on K</span></b> (<i>plural</i> <span class="indexgrey"></span>activities<span class="indexgrey"> on K</span>)&nbsp;<a href=inform:/doc285.html><img border=0 src=inform:/doc_images/help.png></a></p>
+        <p class="tightin1"><i>contravariant&nbsp;<a href=#contra>><img border=0 src=inform:/doc_images/shelp.png></a></i></p>
+        <p class="tightin1"><i>Matches:</i> value<br>
+        An activity is something which Inform does as part of the mechanics of play - for instance, printing the name of an object, which Inform often has to do. An activity can happen by itself ('printing the banner text', for instance) or can be applied to an object ('printing the name of something', say).<br>
+        </p>
+        <p class="halftightin1"><a name=A34></a><b>list of K</b> (<i>plural</i> lists of K)&nbsp;<a href=inform:/doc350.html><img border=0 src=inform:/doc_images/help.png></a></p>
+        <p class="tightin1"><i>covariant&nbsp;<a href=#contra>><img border=0 src=inform:/doc_images/shelp.png></a></i></p>
+        <p class="tightin1"><i>Matches:</i> value, sayable value<br>
+        A flexible-length list of values, where all of the items have to have the same kind of value as each other - for instance, a list of rooms, or a list of lists of numbers. The empty list, with no items yet, is written { }, and a list with items in is written with commas dividing them - say {2, 5, 9}.<br>
+        </p>
+        <p class="halftightin1"><a name=A35></a><b>description of K</b> (<i>plural</i> descriptions of K)&nbsp;<a href=inform:/doc362.html><img border=0 src=inform:/doc_images/help.png></a></p>
+        <p class="tightin1"><i>covariant&nbsp;<a href=#contra>><img border=0 src=inform:/doc_images/shelp.png></a></i></p>
+        <p class="tightin1"><i>Matches:</i> value<br>
+        A description of a set of values, where all of the items have to have the same kind of value as each other - for instance, 'even numbers' or 'open doors which are in lighted rooms'.<br>
+        </p>
+        <p class="halftightin1"><a name=A36></a><b><span class="indexgrey">K valued</span> property<span class="indexgrey"></span></b> (<i>plural</i> <span class="indexgrey">K valued</span> properties<span class="indexgrey"></span>)</p>
+        <p class="tightin1"><i>covariant&nbsp;<a href=#contra>><img border=0 src=inform:/doc_images/shelp.png></a></i></p>
+        <p class="tightin1"><i>Matches:</i> value<br>
+        </p>
+        <p class="halftightin1"><a name=A37></a><b><span class="indexgrey">K valued</span> table<span class="indexgrey"></span> column<span class="indexgrey"></span></b> (<i>plural</i> <span class="indexgrey">K valued</span> table<span class="indexgrey"></span> columns<span class="indexgrey"></span>)</p>
+        <p class="tightin1"><i>covariant&nbsp;<a href=#contra>><img border=0 src=inform:/doc_images/shelp.png></a></i></p>
+        <p class="tightin1"><i>Matches:</i> value<br>
+        </p>
+        <p><a name=contra><span class="smaller"><b>Covariance</b> means that if K is a kind of L, then something
+        	you make from K can be used as the same thing made from L. For example,
+        	a list of doors can be used as a list of things, because 'list of K' is
+        	covariant. <b>Contravariance</b> means it works the other way round.
+        	For example, an activity on things can be used as an activity on doors,
+        	but not vice versa, because 'activity of K' is contravariant.</span></p>
+    </div>
+    <div id="segment2">
+        <hr>
+        <table cellspacing="3" border="0" class="elementbanner">
+            <tr>
+                <td valign="top" align="left">
+                    <div id="minibox2_2" class="smallelementbox">
+                        <a class="elementlink" title="Arithmetic" href="#" onclick="click_element_box('segment2'); return false;"><span class="elementtext">Ar</span></a><div class="elementnumber">
+                            <span class="elementnumbertext">2
+                            </span></div>
+                    </div>
+
+                </td>
+                <td style="width:100%;" align="left" valign="top">
+                    <p style="margin-top:0px;padding-top:0px;margin-bottom:0px;padding-bottom:0px;line-height:150%;"><b>Arithmetic</b> &mdash; 
+                    Which values can be added up, multiplied and so on<br>
+                    <i>About arithmetic&nbsp;&nbsp;<a href=inform:/doc243.html><img border=0 src=inform:/doc_images/help.png></a></i></p>
+
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <p><a calculator><table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td align="left" valign="top">
+                    <img border=0 src=inform:/doc_images/calc2.png>&nbsp;Kinds of value marked with the calculator symbol are numerical -
+                    	these are values we can add, multiply and so on. The range of these
+                    	numbers depends on the Format setting for the project (Glulx format
+                    	supports much higher numbers than Z-code).
+                </td>
+            </tr>
+        </table>
+        </p>
+        <p><table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td align="left" valign="top">
+                    <b>kind of value</b> &nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    <b>minimum</b> &nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    <b>maximum</b> &nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    <b>dimensions</b> 
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">
+                    number&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    1&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    2147483647&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    <i>dimensionless</i>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">
+                    real number&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    --&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    --&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="left" valign="top">
+                    <i>dimensionless</i>
+                </td>
+            </tr>
+        </table>
+        </p>
+    </div>
+    <div id="segment3">
+        <hr>
+        <table cellspacing="3" border="0" class="elementbanner">
+            <tr>
+                <td valign="top" align="left">
+                    <div id="minibox2_3" class="smallelementbox">
+                        <a class="elementlink" title="Values" href="#" onclick="click_element_box('segment3'); return false;"><span class="elementtext">Vl</span></a><div class="elementnumber">
+                            <span class="elementnumbertext">3
+                            </span></div>
+                    </div>
+
+                </td>
+                <td style="width:100%;" align="left" valign="top">
+                    <p style="margin-top:0px;padding-top:0px;margin-bottom:0px;padding-bottom:0px;line-height:150%;"><b>Values</b> &mdash; 
+                    Values which vary during play, and equations.<br>
+                    <i>About variables&nbsp;&nbsp;<a href=inform:/doc61.html><img border=0 src=inform:/doc_images/help.png></a></i></p>
+
+                </td>
+            </tr>
+        </table>
+
+        <p><a name=NAMES></a></p>
+        <p><b>Miscellaneous Definitions</b><br>
+        language of play - <i>natural language</i><br>
+        parameter-object - <i>object</i><br>
+        </p>
+        <p><b>Grammatical definitions</b><br>
+        story tense&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a> - <i>grammatical tense</i><br>
+        story viewpoint&nbsp;<a href='inform://Extensions/Extensions/Graham%20Nelson/English%20Language.html' title="English Language by Graham Nelson" style="text-decoration: none"><img border=0 src=inform:/doc_images/Revealext.png></a> - <i>narrative viewpoint</i><br>
+        </p>
+        <p><b>List of Named or Numbered Equations</b> (<i>About equations&nbsp;&nbsp;<a href=inform:/doc241.html><img border=0 src=inform:/doc_images/help.png></a></i>)</p>
+        <p><i>None</i></p>
+    </div>
+    <hr>
+
+    <!--CONTENT ENDS-->
+</body>
+</html>

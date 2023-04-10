@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+
+<Skein rootNode="node-1418">
+    <generator>Inform Mac Client (Inform version 1.82/6.41/10.1.2)</generator>
+    <item nodeId="node-1418">
+        <command xml:space="preserve">cloak-darkness</command>
+        <result xml:space="preserve">##################################################
+#                                                #
+#  WELCOME TO *BASIC INFORM* CLOAK OF DARKNESS!  #
+#         (an exercise in retro fun)             #
+#                                                #
+#     You can enter one word commands only.      #
+#                                                #
+#                 Good luck!                     #
+#      (type HELP for further information)       #
+#                                                #
+#         (c) 2023 Black Toad Software           #
+#                                                #
+##################################################
+
+
+Foyer of the Opera House
+An echoing, empty space with open doorways leading west to the cloakroom and south to the dimly lit bar. To the north, the open doors of the grand entrance lead back onto dark and rain-lashed streets.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1419"></child>
+        </children>
+    </item>
+    <item nodeId="node-1419">
+        <command xml:space="preserve">north</command>
+        <result xml:space="preserve">It's too early in the evening to be leaving without a drink!  Also- that rain!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1420"></child>
+        </children>
+    </item>
+    <item nodeId="node-1420">
+        <command xml:space="preserve">south</command>
+        <result xml:space="preserve">
+In The Dark
+It's pitch dark and you can't see a thing- apart from a faint light from the foyer to the north.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1421"></child>
+        </children>
+    </item>
+    <item nodeId="node-1421">
+        <command xml:space="preserve">help</command>
+        <result xml:space="preserve">
+In The Dark
+It's pitch dark and you can't see a thing- apart from a faint light from the foyer to the north.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1422"></child>
+        </children>
+    </item>
+    <item nodeId="node-1422">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Scuffling around in the dark is not going to further your cause!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1423"></child>
+        </children>
+    </item>
+    <item nodeId="node-1423">
+        <command xml:space="preserve">north</command>
+        <result xml:space="preserve">Scuffling around in the dark is not going to further your cause!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1424"></child>
+        </children>
+    </item>
+    <item nodeId="node-1424">
+        <command xml:space="preserve">south</command>
+        <result xml:space="preserve">Scuffling around in the dark is not going to further your cause!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1425"></child>
+        </children>
+    </item>
+    <item nodeId="node-1425">
+        <command xml:space="preserve">north</command>
+        <result xml:space="preserve">Scuffling around in the dark is not going to further your cause!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1426"></child>
+        </children>
+    </item>
+    <item nodeId="node-1426">
+        <command xml:space="preserve">quit</command>
+        <result xml:space="preserve">Scuffling around in the dark is not going to further your cause!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+</Skein>

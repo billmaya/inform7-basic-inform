@@ -1,0 +1,446 @@
+Debugging log of inform7
+inform7 was called as: /Applications/Inform 10.1.2.app/Contents/MacOS/ni -internal /Applications/Inform 10.1.2.app/Contents/Resources/Internal -external /Users/billmaya/Library/Inform -project /Users/billmaya/Dropbox/Projects-Dropbox/inform7-basic-inform/bip-namespaces.inform -format=ulx -basic
+Reading further switches from file: <no file>
+Completed expert settings file
+Using Inform kit 'BasicInformKit' (priority 0).
+Using Inform kit 'EnglishLanguageKit' (priority 1).
+Using Inform kit 'BasicInformExtrasKit' (priority 1).
+756 Preform nonterminals read from /Applications/Inform 10.1.2.app/Contents/Resources/Internal/Languages/English/Syntax.preform
+I've now read your source text, which is 14 words long.
+Included: core, naming, instance counting, glulx external files
+Excluded: interactive fiction, spatial model, backdrops, bibliographic data, chronology, devices, mapping, persons, player, regions, scenes, scoring, timed rules, times of day, actions, going, command, showme, multimedia, figures, sounds
+I've also read Basic Inform by Graham Nelson, which is 7691 words long.
+I've also read English Language by Graham Nelson, which is 2328 words long.
+
+
+-----------------------------------------------------
+Phase I ... Dividing source into compilation units
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase II ... Making built in infrastructure
+-----------------------------------------------------
+
+Loading kinds definitions from /Applications/Inform 10.1.2.app/Contents/Resources/Internal/Inter/BasicInformKit/kinds/Macros.neptune
+Loading kinds definitions from /Applications/Inform 10.1.2.app/Contents/Resources/Internal/Inter/BasicInformKit/kinds/Protocols.neptune
+Loading kinds definitions from /Applications/Inform 10.1.2.app/Contents/Resources/Internal/Inter/BasicInformKit/kinds/Core.neptune
+Loading kinds definitions from /Applications/Inform 10.1.2.app/Contents/Resources/Internal/Inter/BasicInformKit/kinds/Punctuation.neptune
+Loading kinds definitions from /Applications/Inform 10.1.2.app/Contents/Resources/Internal/Inter/BasicInformKit/kinds/Files.neptune
+
+
+-----------------------------------------------------
+Phase III ... Pre-pass through major nodes
+-----------------------------------------------------
+
+.... MajorNodes__pre_pass() took 2cs
+
+
+-----------------------------------------------------
+Phase IV ... First pass through major nodes
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase V ... Second pass through major nodes
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase VI ... Making the model world
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase VII ... Completing the model world
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase VIII ... Tables and grammar
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase IX ... Augment model world
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase X ... Phrases and rules
+-----------------------------------------------------
+
+.... ImperativeDefinitions__assess_all() took 1cs
+
+
+-----------------------------------------------------
+Phase XI ... Generating inter (1)
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase XII ... Generating inter (2)
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase XIII ... Generating inter (3)
+-----------------------------------------------------
+
+Schema error: malformed expression
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  greet
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (statement) !print
+      * (expr)
+        DQUOTED     Here are the dismiss functions:
+
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (expr) ;
+    IDENTIFIER  Beta
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (call)
+      * (expr)
+        IDENTIFIER  dismiss
+  * (statement) !print
+      * (expr)
+        DQUOTED     The value of EXAMPLE here is 
+  * (statement) !printnumber
+      * (expr)
+        IDENTIFIER  EXAMPLE
+  * (statement) !print
+      * (expr)
+        DQUOTED     
+
+
+Schema error: unexpected '('
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  greet
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (statement) !print
+      * (expr)
+        DQUOTED     Here are the dismiss functions:
+
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (expr) ;
+    IDENTIFIER  Beta
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (call)
+      * (expr)
+        IDENTIFIER  dismiss
+  * (statement) !print
+      * (expr)
+        DQUOTED     The value of EXAMPLE here is 
+  * (statement) !printnumber
+      * (expr)
+        IDENTIFIER  EXAMPLE
+  * (statement) !print
+      * (expr)
+        DQUOTED     
+
+
+Schema error: unexpected ')'
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  greet
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (statement) !print
+      * (expr)
+        DQUOTED     Here are the dismiss functions:
+
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (expr) ;
+    IDENTIFIER  Beta
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (call)
+      * (expr)
+        IDENTIFIER  dismiss
+  * (statement) !print
+      * (expr)
+        DQUOTED     The value of EXAMPLE here is 
+  * (statement) !printnumber
+      * (expr)
+        IDENTIFIER  EXAMPLE
+  * (statement) !print
+      * (expr)
+        DQUOTED     
+
+
+Schema error: malformed expression
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  greet
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (statement) !print
+      * (expr)
+        DQUOTED     Here are the dismiss functions:
+
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (expr) ;
+    IDENTIFIER  Beta
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (call)
+      * (expr)
+        IDENTIFIER  dismiss
+  * (statement) !print
+      * (expr)
+        DQUOTED     The value of EXAMPLE here is 
+  * (statement) !printnumber
+      * (expr)
+        IDENTIFIER  EXAMPLE
+  * (statement) !print
+      * (expr)
+        DQUOTED     
+
+
+Schema error: unexpected '('
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  greet
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (statement) !print
+      * (expr)
+        DQUOTED     Here are the dismiss functions:
+
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (expr) ;
+    IDENTIFIER  Beta
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (call)
+      * (expr)
+        IDENTIFIER  dismiss
+  * (statement) !print
+      * (expr)
+        DQUOTED     The value of EXAMPLE here is 
+  * (statement) !printnumber
+      * (expr)
+        IDENTIFIER  EXAMPLE
+  * (statement) !print
+      * (expr)
+        DQUOTED     
+
+
+Schema error: unexpected ')'
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  greet
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (statement) !print
+      * (expr)
+        DQUOTED     Here are the dismiss functions:
+
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (expr) ;
+    IDENTIFIER  Beta
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (call)
+      * (expr)
+        IDENTIFIER  dismiss
+  * (statement) !print
+      * (expr)
+        DQUOTED     The value of EXAMPLE here is 
+  * (statement) !printnumber
+      * (expr)
+        IDENTIFIER  EXAMPLE
+  * (statement) !print
+      * (expr)
+        DQUOTED     
+
+
+Schema error: malformed expression
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  greet
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (statement) !print
+      * (expr)
+        DQUOTED     Here are the dismiss functions:
+
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (expr) ;
+    IDENTIFIER  Beta
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (call)
+      * (expr)
+        IDENTIFIER  dismiss
+  * (statement) !print
+      * (expr)
+        DQUOTED     The value of EXAMPLE here is 
+  * (statement) !printnumber
+      * (expr)
+        IDENTIFIER  EXAMPLE
+  * (statement) !print
+      * (expr)
+        DQUOTED     
+
+
+Schema error: unexpected '('
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  greet
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (statement) !print
+      * (expr)
+        DQUOTED     Here are the dismiss functions:
+
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (expr) ;
+    IDENTIFIER  Beta
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (call)
+      * (expr)
+        IDENTIFIER  dismiss
+  * (statement) !print
+      * (expr)
+        DQUOTED     The value of EXAMPLE here is 
+  * (statement) !printnumber
+      * (expr)
+        IDENTIFIER  EXAMPLE
+  * (statement) !print
+      * (expr)
+        DQUOTED     
+
+
+Schema error: unexpected ')'
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  greet
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (statement) !print
+      * (expr)
+        DQUOTED     Here are the dismiss functions:
+
+  * (expr) ;
+    IDENTIFIER  Alpha
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (expr) ;
+    IDENTIFIER  Beta
+    RAW         `
+    IDENTIFIER  dismiss
+    OPEN_ROUND  (
+    CLOSE_ROUND )
+  * (call)
+      * (expr)
+        IDENTIFIER  dismiss
+  * (statement) !print
+      * (expr)
+        DQUOTED     The value of EXAMPLE here is 
+  * (statement) !printnumber
+      * (expr)
+        IDENTIFIER  EXAMPLE
+  * (statement) !print
+      * (expr)
+        DQUOTED     
+
+
+Problem PM_InlineSchemaErrors issued from inform7/imperative-module/Chapter 3/Compile Imperative Definitions.w, line 235
+
+  >--> In 'run the test' (source text, line 62), syntax error(s) were found in
+    the '(-' ... '-)' schema 'Alpha`greet(); print "Here are the dismiss
+    functions:^"; Alpha`dismiss(); Beta`dismiss(); dismiss(); print "The value
+    of EXAMPLE here is ", EXAMPLE, "^";': (1). malformed expression (2).
+    unexpected '(' (3). unexpected ')' (4). malformed expression (5).
+    unexpected '(' (6). unexpected ')' (7). malformed expression (8).
+    unexpected '(' (9). unexpected ')'
+
+.... Sequence__undertake_queued_tasks() took 3cs
+Compile CPU time: 12 centiseconds
+Total of 3 files written as streams.
+Vacant escapes: %: ..CDE.GH..K.M.O.QR.TU...YZab..e..h.jklm.o.qr......yz0123456789
+Vacant escapes: $: .....F...J..........UVW.....................s.u..x.........789
